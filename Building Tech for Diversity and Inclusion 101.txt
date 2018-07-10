@@ -1,0 +1,349 @@
+﻿Building Technology for Diversity and Inclusion 101, The Bachchao Project (2018)
+ thebachchaoproject-05.png 
+
+Building Technology for Diversity and Inclusion 101
+version 1.3
+
+
+Chinmayi S K, Rohini Lakshané, Willow Brugh, Esther Ngei 
+First published: March 2017
+Last updated: July 2018
+
+
+  
+
+Except where otherwise noted, text and images in this manual are licensed under a Creative Commons Attribution-Noncommercial-ShareAlike 4.0 International license (CC-BY-NC-SA 4.0).
+________________
+About us
+The Bachchao Project is a techno-feminist collective that undertakes community-centric efforts to develop and support open source technologies and technical frameworks with the goals of mitigating gender-based violence and working towards equal rights for women, LGBTQIA people, and gender non-conforming groups. We conduct research and advocacy in all the above areas and guide communities in determining appropriate technological interventions for themselves.
+http://thebachchaoproject.org 
+
+
+The authors
+
+
+Chinmayi S K
+	https://www.linkedin.com/in/chinmayi-sk-8591777
+	Rohini Lakshané
+	http://about.me/rohini
+	Willow Brugh
+	https://civic.mit.edu/users/willowbl00
+	Esther Ngei
+	https://esther.ngei.pl
+	
+
+________________
+
+
+
+
+About us        1
+Introduction        3
+Chapter 1: Design        6
+Design processes        6
+Ideation and prototyping        6
+Usability testing        6
+Finding a diverse audience        7
+Design decisions        7
+Structure and components        7
+EULA        7
+Consent policies        8
+Feedback mechanism        9
+Interactivity and its importance        11
+Other policies and measures        12
+Platform elements: Good practices        12
+Language and culture        12
+Chapter 2: Architecture        13
+Data        13
+Collecting data        13
+How and where to store data        13
+Data migration        14
+Choosing a technology platform        14
+Privacy and security        14
+Threat modelling        14
+Obscuring personally-identifiable information        14
+Chapter 3: Coding        15
+Algorithmic bias        15
+Peer review and other best practices        15
+Chapter 4: Testing        16
+Security audit        16
+Bibliography        17
+Further reading        18
+
+
+
+
+________________
+Introduction
+Why is it important to create technology that is conscious of diversity and inclusion?
+Technology is widely believed to be neutral and objective. However, it inherits and reflects social biases of the people who create or operate it. Therefore, technology is not necessarily created or designed after factoring in the realities of different, diverse sections of the society.
+ 
+To give you an example of how the design of technology or its implementation (or both) affect different sections of the population differently, a study published by the noted journal Natural Climate Change in 2016 found that office air-conditioning was 2.5 degrees too cold for women. The temperature for office thermostats was based on a formula developed in the 1960s. The formula employed the resting metabolic rate of a 70-kg, 40-year-old man. Women have a lower rate of metabolism than men of the same age and weight. Back in the time when the formula was devised, there were fewer women in the workplace. The formula was possibly never updated after more women became a part of the workforce.
+ 
+In another example, colour reference cards, also called “Shirley Cards” were made by Kodak in the 1950s to calibrate skin tones, light and shadow in analog still photography. Shirley Cards employed an image of a white woman as a standard, causing other skin tones to get either over-exposed or under-exposed in the printed photograph. As most of the people who could afford cameras then were Caucasian, colour cards suitable for people of different skin colours (and by extension, race) appeared only in the 1970s.
+
+
+Both examples show that the ways technology is conceived, designed or implemented are influenced by the groups that are privileged or dominant in society. This privilege could stem from one or more factors -- caste, economic class, purchasing power, gender, sexuality, physical or intellectual disability, race, colour, ethnicity, certain illnesses, and so on. The groups that do not fit into one or more privileged sections, get overlooked or underserved by technology. This may impact their quality of life, lived experiences, physical or emotional health or wellbeing, financial health, access to opportunities for development, et cetera. 
+
+
+For the developers or creators of such technology, excluding certain sections of the population deprives them of greater adoption of their products or services, an increase in the number of happy customers and, in turn, profits.
+
+
+Who would benefit from such technology?
+ Demographics that would directly benefit
+* People of different gender identities
+* People of different sexual orientations and identities
+* Various linguistic groups
+* People from different cultures 
+* People with physical, intellectual or psychosocial disabilities 
+* People with constraining physical ailments or conditions
+
+
+What was the motivation for creating this manual?
+The authors found a lack of reference material that provides a lucid but comprehensive understanding of the various aspects of conceiving, designing, implementing and improving technology from the point of view of diversity and inclusion. This manual is an attempt to fill that gap.
+
+
+What does this manual say that other references do not?
+Software development involves six basic steps
+1. Planning 
+2. Analysis
+3. Design
+4. Implementation
+5. Verification 
+6. Maintenance 
+
+
+For software -- in this case a web or mobile platform -- to be inclusive and user-friendly, it is necessary that the six steps incorporate certain practices. We have compiled some of those practices with examples, so that a technical team may follow them easily.
+
+
+What should the reader expect to find in this manual?
+A set of guidelines for designing and improving technological platforms (web and mobile) in ways that make them utilitarian and friendly to a diverse group of users. This manual may be used by those who have no experience or formal training in the context of diversity and inclusion issues. It contains a set of individual and collective lessons from various practitioners around the world.
+
+
+What will the reader be able to do after perusing this manual?
+* Create a web or mobile platform that is inclusive.
+* Grant-makers and funders trying to evaluate a technical project as a potential grantee could use the manual as a ready reckoner to determine if the proposed project fits the necessary criteria for inclusivity. Grantors of a technology-based project in a development or civil rights organisation could use it to decide what it takes to promote technology use in their grantee’s works.
+* For an organisation that is planning a technology-based project, the manual provides some curated knowledge to use as a starting point.
+
+
+I have ideas and experiences that would improve or expand this manual. How do I contribute them?
+Please email us at: theteam [@] thebachchaoproject [dot] org. (And thank you!). We are also looking for volunteers to translate this manual into other languages.
+
+
+May I use or modify content from this manual to write one for my team or organisation?
+This manual is licensed CC-BY-NC-SA 4.0. For information about how you may share, reuse or modify it, please refer to https://creativecommons.org/licenses/by-nc-sa/4.0
+
+
+In case you would like to use it in a way that the license does not allow, email us with a request for a waiver and your reasons for needing one.
+
+
+I would like your help in training my community or organisation in applying this manual to our processes.
+Email us. We will be happy to help.
+I would like your help in modifying this manual for our context.
+Again, email us!
+________________
+Chapter 1: Design
+Design processes
+Ideation and prototyping
+The ideation stage is an important step in designing products and services that are cognizant of the economic, social, or cultural rights of different demographic groups. In most research and development organisations, the features  of a new product or service are determined by, say, the market research team and passed on to the technology team for designing and implementation. In this scenario, the people designing the product or service do not have a complete sense of the context(s) for which it is being introduced and are likely to have a limited view of the purpose of the product or service. This results in disparities between the technology that is envisaged and that which is actually designed; between all the users the product is intended to benefit and the users it ends up getting designed for. To make a technological platform, product or service diversity-friendly and inclusive, it is recommended to involve a multidisciplinary team in the ideation and design of the product.
+
+
+Over the years, practitioners have identified some effective processes to design technology for social innovation: 
+1. Collaborative design Multidisciplinary teams collaborate to create the design. This process does not mandate participation from a community.
+2. Participatory design is a process that brings together the user community and design team to make collective decisions about a platform. These decisions are not limited to the design.
+3. Co-design is a process in which a diverse community works on the design of a system. This is done iteratively by creating small modules and prototyping the system. 
+Usability testing
+Irrespective of the type of design process, the design should be tested for usability by people for usability by people beyond those involved in the design process. Usability testing generally determines the features that stay and the ones that need modification. Usually, usability experts conduct these tests with “test groups” matching the target groups of users of the platform. 
+
+
+A product built for inclusivity needs some additional work in this phase. It is important to invite a diverse group of testers to a usability test. This can be done in one of two ways:
+* If is a general purpose application or software, then the test group should represent the diversity in the target user-group in a ratio that is as accurate as possible.
+* If the application or software is meant to serve different user groups and the needs of each group are well-defined and not necessarily the same as each others’, then certain practitioners advise against aggregating the audience in one group. Instead, they suggest conducting separate tests for marginalized groups and mainstream ones. 
+Finding a diverse audience
+Agencies that hire the members of the test group for this process usually have access to a database of a diverse group of people. In case such an agency or pool of people is not available, it would be helpful to tie up with communities and organizations working with marginalized populations. Such organisations and groups are usually very supportive of efforts for inclusion. E.g., while developing a talking keyboard (that is, the keyboard spells as you type), with one of its use cases being the training of visually impaired to use computers, it may be useful to tie up with an organisation working with visually impaired persons to test the prototype. This step could help discover non-obvious but essential issues in the prototype such as the lack of time gaps between words read aloud.
+
+
+Releasing a public alpha version of a prototype is another model to attract a diverse set of people who could use your platform. This might not be useful for all platforms but it can do wonders when you have only a small team. 
+Design decisions
+Structure and components
+EULA
+Software as such cannot be sold to customers; it can only be licensed by its creator(s). However, to make life easier for the developers and their potential licensees, the licensing process is made to resemble the sale of a good. The terms of the license define how licensees (that is, the end-users) may or may not use the software, the liability of the developer (if any), fine print about information/ data collected by the software, and more. The licensing fee, if there is one, is considered the ‘price’ of the software.
+
+
+End-user license agreement (EULA), also known as, software license agreement is a contract between the licensor and purchaser, establishing the purchaser's right to use the software. [Source: Wikipedia].
+
+
+In most software, EULAs contain many pages of text and are crafted by lawyers. Such a style makes them unreadable to most non-lawyers, leading to end-users accepting the agreement without fully understanding the rights and protections they have and the ones they would forego by signing up or performing certain actions.This puts the software creators (and their lawyers) at an advantage over the end-users.
+
+
+One way to instill trust in your users is to design ways to better communicate the information in the EULA. Take, for instance, the user data policy adopted and published by Zariya, and organisation that provides legal help and counselling to women who face violence and abuse: https://www.zariyaindia.org/privacy. Users of such a service would be extremely cautious about the kind of information they provide to it website. Regardless of whether they are aware of how web technology works, it would be important for them to know who would have access to their information and how secure it is. If their information is misused or leaked, it could make them potentially more unsafe and vulnerable to further violence and social stigma. Hence, it is important to communicate in an accessible and lucid way the terms of data use, storage, protection and retention to your users, especially those living in sensitive contexts and situations.
+  
+
+Screenshot of the Data Policy page on the website of Zariya, as of July 3, 2018
+Consent policies
+While building a platform for a social cause it is very important to include a mechanism for obtaining consent from its prospective users about how, where and when their personal information and data will be used and stored and the entities that would have access to their information. It is also a good practice to include such a mechanism in private platforms. 
+
+
+A consent document is an elaborate way to inform the user about the modalities of the use of her information available to the platform,  how the platform will function for such a user, the kind of information that will be gathered and stored and the duration for which it will remain accessible to the platform or service-provider. Here is a framework from the Responsible Data forum on designing consent policies for data use: https://wiki.responsibledata.io/Framework_for_consent_policies
+  
+
+Image credit: Willow Brugh, https://hackpad.com/ep/profile/tY4ec91HeQ3 
+
+
+
+
+Feedback mechanism
+One of the reasons that platforms built for diversity and inclusion fail is the lack of a simple and visible mechanism for its users to provide feedback. It is assumed by the the makers of the platform that all users understand itse working. However, one of the the reasons for a low rate of user onboarding is the that the users fail to understand how to use a platform. A visible and easy-to-use feedback mechanism ensures these issues are captured.
+* Easy-to-use forms 
+* Flexible feedback 
+  
+
+Notification of feedback to the developer
+
+
+  
+
+Forum for users to interact with the employees
+
+
+Interactivity and its importance 
+   
+Screenshot of the first step of Twitter’s form for reporting abuse, circa 2016
+
+
+  
+
+Screenshot of the next step for Twitter’s abuse reporting form, circa 2016
+
+
+When components are used as a form of communication sometimes it is easy to identify the entire gamut of possible responses. But there are times when responses can be complex and need room for expression. Forms, for example, are useful for collecting information. However, they could also be restrictive for a user. 
+
+
+Look at the above form provided by Twitter to its users for reporting abuse or harm. It allows users to report a tweet or Direct Message under six broad categories. When one needs to report, say, a Twitter user sending or tweeting offensive images, it could fall under “sensitive image”, “targeted harassment” or “disrespectful or offensive”. In this scenario, it becomes necessary that the user is able to file a report and also provide additional information that will make their report comprehensive and facilitate swift action. As you can see, the options in Twitter’s form are broad enough to cover many of the flags that could potentially be raised. On the downside, the user may find such options vague and overarching. A form that requires the user to read scores of granular options and complete numerous steps could also be a sub-optimal measure. You can arrive upon the right form, menu or reporting tools by keeping in mind the contexts for the platform, product or service you provide and those of your users. The more homogeneous the user group, the easier it will be to construct such a form or menu.
+
+
+When developing a product or service for inclusion and diversity it is important that essential components such as profiles, feedback and reports include well thought-out design, flexibility and interactivity. To know more about interface and restrictions we recommend perusing this talk by Mushon Zer-Aviv: http://opentranscripts.org/transcript/interfaces-demand-obedience
+
+
+
+Flexibility in modules not only allows for expression but can act as a hook to tackle harassment on platforms. Nathan Mathias, a researcher at MIT Media Lab recently experimented interaction on nudging fact-checking on the Rediff community, r/worldnews. Harassment is not an issue that can solved simply by automated platforms. It needs human intervention. To enable that, it is important that design includes flexibility. 
+Other policies and measures
+Anti-discrimination policies
+Opposing biases based on colour, race, religion, gender, sexuality, and other identities and implementing a policy to respond to them instills confidence in users. We recommend that you create such a policy to welcome users.
+  
+
+Screenshot of AirBnB’s non-discrimination policy, circa 2016
+
+
+Platform elements: Good practices
+Language and culture
+Localization is a standard process followed by the industry to support various languages. While popular languages have large databases and corpuses of terms, words and phrases, there is still dearth of material for less popular ones. It is important to build a mechanism to increase this pool and use open language tools. This is also an important factor when developing for accessibility for the disabled because of limited support available for text-to-speech conversion in these languages 
+
+
+Platform creators need to be culturally aware to understand and respect the differences in ideas, traditions, behaviors, beliefs and lifestyles not only between one culture and another but from one region or one locality to another. Disregarding the codes of ’micro-cultures’ for communication can be exclusionary towards some groups. 
+* Community policies
+* Different genders
+* Legitimate fields: Remember that legality is subjective.
+Chapter 2: Architecture
+Data
+  
+
+“The Data Lifecycle” by Mushonz/ Wikimedia Commons, CC-BY-SA 4.0
+
+
+Data projects face challenges and risks at every step. One of the frameworks we recommend to help you think about responsibly interacting with data is delineated in this white paper by Geeks Without Bounds. Though this resource was written for humanitarian and disaster-relief projects, it may serve as a guideline for all kind of data projects.
+Collecting data
+The golden rule is that one should only collect only as much user data as is absolutely essential. E.g, if you need information about the age bracket a user falls in, do not ask for their exact date of birth.
+
+
+It is a good practice to declare and make accessible a “Consent policy” which states all the information about the user data one is requesting and/ or storing. (Refer to: https://wiki.responsibledata.io/Framework_for_consent_policies)
+How and where to store data
+Where you store the data you collect from your users makes a difference to its security, privacy and integrity. Legally, the geographical location of data storage is one of the factors that determines the jurisdiction that applies to such data and the data protection and privacy laws that you need to abide by. Conversely, storing data in certain geographies and/or with certain platforms could harm your users’ privacy. Data storage can be both a boon and bane for your users.
+
+
+It is important to know and trust the people or groups who have access to your users’ data on the server. E.g., consider the effects on reproductive rights when determine the server you use for storing data from a fertility application for women.
+
+
+It is very important for users to be able to exercise their rights and claim to their data. This is greatly affected by the choice of the location where the data is stored. E.g., if you develop a financial access application, then storing the data on a server located in another country could be problematic for users conducting transactions with government bodies and agencies.
+Data migration
+If you plan to migrate data or share the data with another platform it is recommended that you obtain explicit consent from your users, instead of asking for blanket permissions.
+
+
+Data migration is also a potential situation when a data leak could occur. Hence, it is important to design safe migration practices while transferring sensitive data.
+Choosing a technology platform 
+It is important to be aware of the limitations and the issues with the platform(s) that you use to support the systems built by you. 
+
+
+Legality and the rights of your users depend on the platforms you choose. Hence, understand what your domain extensions mean, where your domain is parked, and the kind of tracking your plugins allow for. E.g., the Google input tools plugin enables Google to snoop on the content your users type.
+
+
+It is also important that your platform supports accessibility features for the disabled.
+Privacy and security 
+Threat modelling
+Not every piece of information and demographic faces the same security threat level and not every platform requires a battery of security practices. Hence, we recommend the practice of threat modelling with the help of security practitioners, which would help you define your security vulnerabilities and needs.
+Obscuring personally-identifiable information
+A widely used platform generally possess a lot of information about its users either due from initial collection or the use of analytics or both. It is important to recognise the potential risks to the users while storing this information. For example, certain gender identities are illegal in certain countries. While it is important to give the users the freedom of gender expression, we recommend that you obscure gender information in the form of binary gender identities in order to prevent risk to your users.
+
+
+
+
+
+
+
+
+________________
+Chapter 3: Coding
+Algorithmic bias
+The algorithm plays a huge role in content creation and analytics, among other things, in systems of today. We assume algorithms are neutral but they reflect the biases of the people who create, write or use them. Algorithmic bias is the reason why photos of women are shown in advertisements for relatively low-paying jobs and why neighbourhoods with high African-American populations get marked as unsafe. 
+
+
+Here are some of the ways to avoid algorithmic biases:
+* Peer review of algorithms
+* Review of assumptions made by the algorithm from experts in the fields of diversity and inclusion
+* Transparency: By opening your algorithms to scrutiny, you invite review from a diverse set of people. This is important because even when you are working with experts from the field you might be dealing with limited perspectives 
+
+
+
+
+Peer review and other best practices 
+During the development process, it is important to ensure that the accessibility and inclusivity features are part of the primary requirements from the onset. This will ensure that they are not put in as an afterthought and are fully integrated into the system. This can be done by:
+* Establishing a continuous closed-loop peer review process
+* Establishing well-defined and unambiguous requirements for the tools and ensuring that they are implemented
+________________
+Chapter 4: Testing
+Coding the features is just not enough; it is also important to write corresponding test cases for testing the features in light of diversity and inclusion.
+
+
+One should add these essential test cases to one’s platform
+* Checking for translations
+* Checking for text-to-speech rendering of content and vice versa
+* Checking for text-to-speech rendering of all user interface components
+* Checking for providing content and/ or support in different languages, that is, localization
+* Checking for data value validation for exceptions. E.g., when building a platform that collects names and information about gender from a population. 
+Security audit 
+Apart from writing security test cases, organising independent, external security audits is a good practice. This is especially important if your platform deals with any kind of sensitive data or provides services that directly tie into lives and livelihoods of people. We emphasise on external security audits because internal audits are usually driven by the biases of the  makers. 
+________________
+Bibliography
+* Ornelas, Y. & Gregory J. (2009). Design for Social Inclusion [PDF]. Institute of Design, Illinois Institute of Technology. Retrieved July 4, 2018, from http://www.iasdr2009.or.kr/Papers/Special%2520Session/Design%2520for%2520Social%2520Inclusion%2520and%2520Social%2520Sustainability/Design%2520for%2520Social%2520Inclusion.pdf
+* O'Neil, C. (2016). Weapons of math destruction: How big data increases inequality and threatens democracy. Crown Archetype. ISBN 0553418823, 9780553418828. 
+* Responsible Data Wiki. Retrieved July 4, 2018, from https://wiki.responsibledata.io
+* Framework for consent policies. Retrieved July 4, 2018 from https://wiki.responsibledata.io/Framework_for_consent_policies
+* Data in the project lifecycle. Retrieved July 4, 2018 from https://wiki.responsibledata.io/Data_in_the_project_lifecycle
+* Zer-Aviv, M. (2015, April 23). How Interfaces Demand Obedience. MIT Comparative Media Studies/ Writing. Retrieved July 4, 2018, from http://opentranscripts.org/transcript/interfaces-demand-obedience
+* D’Ignazio, C. (2016, June 3). A primer on non-binary gender and big data. Centre for Civic Media, MIT. Retrieved July 4, 2018, from http://civic.mit.edu/2016/06/03/a-primer-on-non-binary-gender-and-big-data
+* Nymwars. (2012, October 19). What is a legitimate name? Aestetix. Retrieved July 4, 2018, from https://aestetix.com/category/nymwars
+* aestetix on NymRights: Protecting Identity in the Digital Age. (2014, September 29). Berkman Klein Centre for Internet and Society at Harvard University. Retrieved July 4, 2018, from https://cyber.harvard.edu/interactive/events/luncheon/2014/09/aestetix
+________________
+Further reading
+* It’s a Man’s Phone. (2013, November 5). Zeynep Tufekci. Retrieved July 4, 2018, from https://medium.com/technology-and-society/its-a-mans-phone-a26c6bee1b69
+* Building tech for diversity and inclusion. (2017, May 25). Chinmayi S K. Retrieved July 4, 2018, from https://medium.com/@chinmayisk/building-technology-for-diversity-and-inclusion-3d9f6304463a
+* Diversity, Equity, and Inclusion in Science and Technology: Action Grid [PDF]. Retrieved July 4, 2018, from https://www.whitehouse.gov/sites/whitehouse.gov/files/images/Documents/Diversity%20Equity%20Inclusion%20Action%20Grid.pdf
+* Diversity and Inclusion in Design: Why Do They Matter? Retrieved July 4, 2018, from https://www.aiga.org/diversity-and-inclusion-in-design-why-do-they-matter
+* Diversity and Inclusion Resources https://www.aiga.org/diversity-and-inclusion-resources
+* Fostering Innovation Through a Diverse Workforce [PDF].  Retrieved July 4, 2018, from https://images.forbes.com/forbesinsights/StudyPDFs/Innovation_Through_Diversity.pdf
+* 6 Alarming Ways Facebook’s Real Name Policy Puts its Users at Risk. (2015, September 29). Everyday Feminism. Retrieved July 4, 2018, from https://everydayfeminism.com/2015/09/the-problem-with-real-names
+* Journeys of Water. Gaurav Bhushan, Nitin Gupta & Jennifer Lee Fuqua. (2013). Frog Design.
+* Kexin Pei, Yinzhi Cao, Junfeng Yang & Suman Jana. (2017). Deep- Xplore: Automated Whitebox Testing of Deep Learning Systems. In Proceedings of ACM Symposium on Operating Systems Principles (SOSP ’17). https://doi.org/10.1145/3132747.3132785
+* Deceived by design [PDF]. (2018, June 27). Forbrukerradet. Retrieved July 4, 2018, from https://fil.forbrukerradet.no/wp-content/uploads/2018/06/2018-06-27-deceived-by-design-final.pdf
+* Design Justice: Towards an Intersectional Feminist Framework for Design Theory and Practice. (2018, June 3). Sasha Costanza-Chock. Proceedings of the Design Research Society 2018. Retrieved July 4, 2018, from https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3189696
+* Joyce Chou, Oscar Murillo, & Roger Ibars. (2017, September 26). How to Recognise Exclusion in AI. Inclusive Design. Retrieved July 4, 2018, from https://medium.com/microsoft-design/how-to-recognize-exclusion-in-ai-ec2d6d89f850
